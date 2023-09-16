@@ -1,0 +1,36 @@
+nav{
+    padding: 0.94rem 0;
+    color: white;
+}
+
+nav, .sign-in-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sign-in-btn img{
+    margin-left: 1.69rem;
+    cursor: pointer;
+}
+
+.mobile-menu .search-box{
+    display: none;
+}
+
+@media (max-width: 991px){
+    .sign-in-btn img{
+        margin-left: .5rem;
+    }
+}
+
+
+
+@media (max-width: 610px) {
+   .mobile-menu .search-box{
+      display: flex;
+      width: 95%;
+      margin: 1.5rem auto;
+      color: #333;
+    }
+  }

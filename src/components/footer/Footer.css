@@ -1,0 +1,51 @@
+footer{
+    width: 30.8rem;
+    margin: 9.19rem auto 4.6rem;
+    text-align: center;
+}
+
+footer .socials{
+    gap: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+footer ul a{
+    color: var(--gray-900, #111827);
+}
+
+footer ul li{
+    font-weight: 700;
+    padding: 2.25rem 0;
+}
+
+footer h5{
+    color: var(--gray-500, #6B7280);
+}
+
+@media (max-width : 620px) {
+    footer {
+        margin: 3.19rem auto 1.6rem;
+        width: 75%;
+    }
+
+    footer ul{
+        flex-direction: column;
+    }
+
+    footer ul li{
+        padding: 1rem 0;
+        font-size: 1rem;
+    }
+
+    footer .socials{
+        gap: 1.2rem;
+    }
+}

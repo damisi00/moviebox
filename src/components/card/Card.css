@@ -1,0 +1,38 @@
+.card{
+    /* width: 20%; */
+}
+
+.card-image{
+    position: relative;
+}
+
+.card-image img, .card-txt{
+    width: 100%;
+}
+
+.card-rating{
+    display: flex;
+    justify-content: space-between; 
+}
+
+.card-txt{
+    padding : .75rem 0;
+}
+
+.card-txt h3, .card-rating{
+    padding: 0.75rem 0;
+}
+
+.card-rating, .card-txt p{
+    font-size: 0.75rem;
+}
+
+.card-rating, .card-txt h3{
+    color: var(--gray-900, #111827);
+    
+}
+
+.card-txt p{
+    color: var(--gray-400, #9CA3AF);
+    font-weight: 700;
+}

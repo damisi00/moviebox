@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+.movie-detail{
+    padding: 2.38rem 3.19rem 1.25rem 2.31rem;
+    /* width: 83.19%; */
+    width: calc(100% - 14.125rem);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+.only-mobile{
+    display: none;
+}
+
+.video-container{
+    width: 100%;
+    /* height: 28.0625rem; */
+    /* height: 46%; */
+}
+
+video{
+    width: -webkit-fill-available;
+    border-radius: 1.25rem;
+    background: url('<path-to-image>'), lightgray 50% / cover no-repeat;
+}
+
+.movie-headline{
+    margin: 1.94rem 0 1.56rem;
+}
+
+.movie-headline, .movie-headline h6{
+    color: #404040;
+    font-size: 1.4375rem;
+    font-weight: 500;
+    
+}
+
+.movie-headline, .movie-headline .title-wrapper, .movie-categories-container, .awards-noms,
+ .full-movie-dets{
+    display: flex;
+}
+
+.movie-headline .title-wrapper{
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    
+}
+
+.movie-text{
+    width: 48.375rem;
+    padding: 0 1.31rem 0 1.13rem;
+}
+
+.movie-desc, .cast-and-crew p, .awards-noms span{
+    
+    color: #333;
+}
+
+.full-movie-dets p, .full-movie-dets button, .awards-noms span{
+    font-size: 1.25rem;
+}
+
+.movie-categories-container{
+    margin-left: 1.06rem;
+}
+
+.cast-and-crew{
+    padding: 1.25rem 0 0.94rem;
+}
+
+.cast-and-crew p{
+    padding: 1rem 0 0.94rem;
+    border-top: 1px solid rgba(232, 232, 232, 0.25);
+    border-bottom: 1px solid rgba(232, 232, 232, 0.25);
+}
+
+.cast-and-crew span{
+    color: #BE123C;
+}
+
+.full-movie-dets button{
+    font-weight: 500;
+    border-radius: 0.625rem;
+    padding: .81rem .75rem;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.top-rated{
+    padding-left: 1.25rem;
+    padding-right: 1.19rem;
+    margin-right: 1.5rem;
+    
+}
+
+.showtimes-btn, .top-rated{
+    background-color: #BE123C;
+    color: #fff;
+}
+
+.awards-noms{ 
+    margin-bottom: 2.56rem;
+    align-items: center;
+    border-radius: 0.625rem;
+    border: 1px solid #C7C7C7;
+    background: rgba(255, 255, 255, 0.80);
+}
+
+.awards-noms span{
+    font-weight: 500;
+}
+
+.awards-noms img{
+    padding-right: 1.63rem;
+    margin-left: auto;
+}
+
+.full-movie-dets aside{
+    padding-right: 1.25rem;
+    padding-top: 1.81rem;
+}
+
+aside .movie-rating{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    justify-content: flex-end;
+}
+
+aside .movie-rating span{
+    color: #E8E8E8;
+    font-size: 1.5625rem;
+    font-weight: 500;
+}
+
+aside .movie-rating h5{
+    font-size: 1.25rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.full-movie-dets aside button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+aside button span{
+    padding-left: 0.94rem;
+}
+
+aside button:first-of-type{
+    background-color: #BE123C;
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.watch-options-btn{
+    border: 1px solid #BE123C;
+    background-color: rgba(190, 18, 60, 0.10);
+}
+
+aside .best-movies{
+    margin: 2.06rem 0 1.25rem;
+    position: relative;
+}
+
+aside .best-movies button{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    background-color: rgba(18, 18, 18, 0.50);
+    backdrop-filter: blur(2px);
+    font-size: 0.875rem;
+    color: #E8E8E8;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+
+}
+
+@media(max-width: 991px){
+    .full-movie-dets{
+        flex-direction: column;
+    }
+
+    .movie-text, aside{
+        width: 100%;
+    }
+
+    .movie-headline, .movie-headline h6{
+        font-size: 1.25rem;
+    }
+
+    .full-movie-dets p, .full-movie-dets button, .awards-noms span, aside .movie-rating h5, aside .movie-rating span{
+        font-size: 1rem;
+    }
+
+    .full-movie-dets, .movie-headline, .title-wrapper{
+        flex-direction: column;
+    }
+
+    .awards-noms img{
+        padding-right: 0.8rem;
+        width: 28px;
+    }
+
+    aside  .best-movies{
+        width: inherit;
+    }
+
+    aside  .best-movies .best-img{
+        width: 100%;
+    }
+
+}
+
+@media(max-width: 769px){
+    .movie-detail {
+        padding: 2.38rem 1.19rem 1.25rem;
+        width: -webkit-fill-available;
+    }
+    
+}
+
+
+@media(max-width: 620px){
+    .only-mobile{ 
+        padding-bottom: 1.2rem;
+        display: flex;
+    }
+}
