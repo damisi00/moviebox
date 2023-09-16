@@ -1,43 +1,86 @@
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom'
 import GenreButton from '../GenreButton'
 import './Detail.css'
 import ExpandBtn from '../../assets/Expand Arrow.svg'
+import  PlayBtn from '../../assets/Play.svg'
 import Star from '../../assets/Star.svg'
 import Tickets from '../../assets/Two Tickets.png'
 import ListIcon from '../../assets/List.png'
 import ListIcon2 from '../../assets/List2.png'
 import Preview from '../../assets/preview.png'
 import Logo from '../Logo'
+import Loader from '../Loader';
+
 
 const Detail = () => {
+  const {id} = useParams();
+  console.log(id)
+  const [details, setDetails] = useState({});
+  const [loading, setLoading] = useState(false);
+  const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+  const BASE_URL = 'https://api.themoviedb.org/3';
+  
+
+  useEffect(() => {
+    setLoading(true);
+    
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+
+    const getMovieDetails = async () => {
+    
+      try{
+        const response = await fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`);
+        const movies = await response.json();
+        console.log(movies);
+        setDetails(movies);
+      } catch (error) {
+        console.log(error);
+      
+      }
+    };
+    getMovieDetails();
+  }, [id]);
   return (
     <>
-     
+        {loading ? (
+          <Loader /> ) : 
         <main className="movie-detail">
-        <Link style={{color: '#333'}} to='/moviebox' className='only-mobile'><Logo /></Link>
+        <Link style={{color: '#333'}} to='/' className='only-mobile'><Logo /></Link>
           <div className="video-container">
-            <video data-testid='movie-overview' controls>
-              <source src="" type="video/mp4" /> 
-              <source src="" type="video/ogg" />
-              Your browser does not support the video tag.-
-            </video>
+            {/* <iframe src={`http://api.themoviedb.org/3/movie/${details.id}/videos`}> 
+            </iframe> */}
+            <div className="play-container">
+              <div className="ellipse">
+              <img src={PlayBtn} alt=""  className='play-btn'/>
+              </div>
+            </div>
+           
+            
+            <img src={`https://image.tmdb.org/t/p/w500/${details.backdrop_path}`} alt={details.title + 's poster'} className='wallpaper'/>
           </div>
 
           <section  className="full-movie-dets">
             <div className="movie-text">
               <div className="movie-headline">
                 <div className='title-wrapper'>
-                  <h6 data-testid='movie-title'>Top Gun: Maverick </h6>  
-                  <span data-testid='movie-release-date'>•    2022</span>  
-                  <span>•   PG-13</span>  
-                  <span data-testid='movie-runtime'>•   2h 10m </span>
+                  <h6 data-testid='movie-title'>{details.title}</h6>  
+                  <span data-testid='movie-release-date'> {Date.parse(details.release_date)}{' '}</span>  
+                  <span>  PG-13</span>  
+                  <span data-testid='movie-runtime'>  {details.runtime}</span>
                 </div>
                 <div className="movie-categories-container">
-                  <GenreButton />
+                  {/* { details.genre_ids.map((genre, index) => { */}
+
+                  <GenreButton  />
+                  {/* })} */}
                 </div>
               </div>
 
-              <p className='movie-desc'>After thirty years, Maverick is still pushing the envelope as a top naval aviator, but must confront ghosts of his past when he leads TOP GUN's elite graduates on a mission that demands the ultimate sacrifice from those chosen to fly it.</p>
+              <p className='movie-desc' data-testid='movie-overview'>{details.overview}</p>
 
               <div className="cast-and-crew">
                 <p>Director : <span>Joseph Kosinski</span></p>
@@ -55,7 +98,7 @@ const Detail = () => {
             <aside >
               <div className="movie-rating">
                 <img src={Star} alt="star icon" />
-                  <h5><span>8.5 </span>| 350k</h5>
+                  <h5><span>{details.vote_average}</span>| 350k</h5>
               </div>
 
               <button>
@@ -78,6 +121,7 @@ const Detail = () => {
             </aside>
           </section>
         </main>
+        };
     </>
   )
 }

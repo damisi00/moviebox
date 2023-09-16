@@ -1,5 +1,5 @@
 import './Card.css'
-import sample1 from "../../assets/sample.png"
+// import sample1 from "../../assets/sample.png"
 import Imdb from '../Imdb'
 import RottenTomato from '../RottenTomato'
 import FavoriteBtn from '../detail/FavoriteBtn'
@@ -10,7 +10,7 @@ const Card = ({ movie }) => {
   return (
     <>
     
-        <Link to={`movies/${movie.id}`} className="card" data-testid="movie-card"> 
+        <Link to={`/movie/${movie.id}`} className="card" data-testid="movie-card"> 
             <div className="card-image">
                 <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.path} data-testid="movie-poster"/>
                 <FavoriteBtn />
@@ -22,9 +22,7 @@ const Card = ({ movie }) => {
                    <Imdb vote_average={movie.vote_average}/>
                     <RottenTomato />
                 </div>
-                <p>{movie.genre_ids.map((genre_id, index) => {
-                    
-                })}</p>
+                <p>Action, Adventure </p>
             </div>
         </Link>
     </>
