@@ -6,8 +6,10 @@ import { useState, useEffect } from "react"
 const d = new Date();
 const Feature = () => {
   
-  const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
-  const BASE_URL = 'https://api.themoviedb.org/3';
+  const API_KEY = '1f603d4618cc8d51a0e08360e9678848';
+  // const BASE_URL = 'https://api.themoviedb.org/3';
+  const BASE_URL = 'https://hngix-two.netlify.app/';
+
   const [topRated, setTopRated] = useState([]);
 
   useEffect(() => {
