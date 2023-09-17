@@ -7,7 +7,7 @@ import { useState, useEffect } from "react"
 const Feature = () => {
   
   const API_KEY = '1f603d4618cc8d51a0e08360e9678848';
-  const BASE_URL = 'https://api.themoviedb.org/3';
+  // const BASE_URL = 'https://api.themoviedb.org/3';
   const [topRated, setTopRated] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Feature = () => {
     const getMovies = async () => {
     
       try{
-        const response = await fetch(`${BASE_URL}/movie/top_rated/?api_key=${API_KEY}`);
+        const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated/?api_key=${API_KEY}`);
         const movies = await response.json();
         // console.log(movies);
         setTopRated(movies.results.slice(0, 10));
