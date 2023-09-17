@@ -49,7 +49,7 @@ const Detail = () => {
         {loading ? (
           <Loader /> ) : 
         <main className="movie-detail">
-        <Link style={{color: '#333'}} to='/' className='only-mobile'><Logo /></Link>
+        <Link style={{color: '#333'}} to='/moviebox' className='only-mobile'><Logo /></Link>
           <div className="video-container">
             {/* <iframe src={`http://api.themoviedb.org/3/movie/${details.id}/videos`}> 
             </iframe> */}
@@ -68,7 +68,8 @@ const Detail = () => {
               <div className="movie-headline">
                 <div className='title-wrapper'>
                   <h6 data-testid='movie-title'>{details.title}</h6>  
-                  <span data-testid='movie-release-date'> {Date.parse(details.release_date)}{' '}</span>  
+                  {/* {Date.parse(details.release_date)}{' '} */}
+                  <span data-testid='movie-release-date'> {details.release_date}</span>  
                   <span>  PG-13</span>  
                   <span data-testid='movie-runtime'>  {details.runtime}</span>
                 </div>
