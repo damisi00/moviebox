@@ -4,7 +4,7 @@
     border-radius: 0rem 2.8125rem 2.8125rem 0rem;
     border: 1px solid rgba(0, 0, 0, 0.30);
     background: #FFF;
-    min-height: 100vh;
+    height: 120vh;
     padding: 3.25rem 0 4.31rem;
    justify-content: space-between;
 }

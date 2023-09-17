@@ -4,7 +4,8 @@
     /* width: 83.19%; */
     width: calc(100% - 14.125rem);
     font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
+    height: 120vh;
+    overflow-y: auto;
 }
 
 .only-mobile{

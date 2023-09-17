@@ -3,7 +3,7 @@ import Card from "./card/Card.jsx"
 import { useState, useEffect } from "react"
 
 
-const d = new Date();
+// const d = new Date();
 const Feature = () => {
   
   const API_KEY = '1f603d4618cc8d51a0e08360e9678848';
@@ -42,7 +42,7 @@ const Feature = () => {
         
         <section className="card-wrapper">
         {topRated.map(movie => {
-          return <Card key={movie.id} movie={movie}/>;
+          return <Card key={movie.id} movie={movie}/>
         })}
         </section>
        

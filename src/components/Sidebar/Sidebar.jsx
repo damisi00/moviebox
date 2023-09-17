@@ -13,7 +13,7 @@ const Sidebar = () => {
         <section className='side-bar'>
             <Logo />
             <div className="side-links">
-                <Link to="/moviebox">
+                <Link to="/">
                     <img src={home} alt="Home" />
                     <span>Home</span>
                 </Link>

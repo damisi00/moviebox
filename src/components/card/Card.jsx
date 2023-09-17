@@ -10,7 +10,7 @@ const Card = ({ movie }) => {
   return (
     <>
     
-        <Link to={`/moviebox/movie/${movie.id}`} className="card" data-testid="movie-card"> 
+        <Link to={`/movie/${movie.id}`} className="card" data-testid="movie-card"> 
             <div className="card-image">
                 <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.path} data-testid="movie-poster"/>
                 <FavoriteBtn />
