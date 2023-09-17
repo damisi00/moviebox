@@ -1,6 +1,6 @@
 import Navbar from "./nav/Navbar"
 import imdb from "../assets/imdb.png"
-import rottenTomato from "../assets/tomato.png"
+// import rottenTomato from "../assets/tomato.png"
 import playIcon from "../assets/Play.svg"
 import Imdb from "./Imdb"
 import RottenTomato from "./RottenTomato"

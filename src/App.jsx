@@ -20,8 +20,8 @@ function App() {
       {/* <RouterProvider router={router} /> */}
      
         <Routes>
-          <Route  path='/' element={<Homepage />} />
-          <Route path='/movie/:id' element={<DetailPage />} />
+          <Route exact path='/' element={<Homepage />} />
+          <Route  path='/movie/:id' element={<DetailPage />} />
           <Route path='*' errorElement={<ErrorPage />} />
         </Routes>
     

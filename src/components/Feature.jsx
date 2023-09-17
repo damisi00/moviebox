@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 const d = new Date();
 const Feature = () => {
   
-  // const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+  const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
   const BASE_URL = 'https://api.themoviedb.org/3';
   const [topRated, setTopRated] = useState([]);
 
@@ -18,7 +18,7 @@ const Feature = () => {
     const getMovies = async () => {
     
       try{
-        const response = await fetch(`${BASE_URL}/movie/top_rated/?api_key=1f603d4618cc8d51a0e08360e9678848`);
+        const response = await fetch(`${BASE_URL}/movie/top_rated/?api_key=${API_KEY}`);
         const movies = await response.json();
         // console.log(movies);
         setTopRated(movies.results.slice(0, 10));
